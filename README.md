@@ -115,7 +115,7 @@ Cada empresa tiene un registro único.
 
 Se encuentran 2 valores nulos en la columna `RAZÓN SOCIAL`.
 
-![Valores nulos](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/691022879f0d20482256370b/download/image.png)
+https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/691022879f0d20482256370b/download/image.png
 
 Esos dos casos deben revisarse, ya que podrían corresponder a errores de digitación o registros sin razón social asignada.
 
@@ -127,7 +127,7 @@ Todas las columnas están actualmente como **texto** (`object`).
 Incluye tanto variables categóricas (como **REGIÓN**, **MACROSECTOR**, **CIUDAD**)  
 como variables numéricas representadas como texto (**INGRESOS OPERACIONALES**, **GANANCIA (PÉRDIDA)**, **TOTAL ACTIVOS**, etc.).
 
-![Tipos de datos](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/691023c057ef254664d3ea21/download/image.png)
+https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/691023c057ef254664d3ea21/download/image.png
 
 Antes de cualquier análisis numérico o cálculo, será necesario **convertir las columnas financieras a tipo numérico (`float` o `int`)**, eliminando símbolos como `$`, `,` o espacios.
 
@@ -140,7 +140,7 @@ Aunque todavía están en formato texto, se espera que:
 - Las **variables financieras** (*INGRESOS OPERACIONALES*, *TOTAL ACTIVOS*, *PATRIMONIO*) muestren una **distribución fuertemente sesgada a la derecha**, con pocas empresas de muy alto valor y muchas de menor tamaño.  
 - Las **variables categóricas** como *MACROSECTOR* o *REGIÓN* concentren gran parte de los registros en pocas categorías dominantes (por ejemplo, *Comercio* o *Bogotá D.C.*).
 
-![Distribuciones](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/6910245efb729c2b4f2f7b94/download/image.png)
+https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/6910245efb729c2b4f2f7b94/download/image.png
 
 Se recomienda aplicar una **transformación logarítmica o escalamiento** después de convertirlas a numéricas para obtener análisis más estables.
 
@@ -154,7 +154,7 @@ Una vez convertidas, se espera encontrar:
 - Alta **correlación positiva** entre *TOTAL ACTIVOS*, *TOTAL PASIVOS* y *PATRIMONIO*.  
 - Posible **relación entre INGRESOS OPERACIONALES y GANANCIA (PÉRDIDA)*.*
 
-![Correlaciones](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/6910257b81555a3a74144e1f/download/image.png)
+https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/6910257b81555a3a74144e1f/download/image.png
 
 Esto puede ayudar a identificar **indicadores financieros clave** o **redundancias entre variables**.
 
