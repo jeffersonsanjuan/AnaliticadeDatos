@@ -105,7 +105,7 @@ El dataset incluye datos económicos como ingresos operacionales, utilidad neta,
 
 0 registros duplicados
 
-![Duplicados](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/69102221e98ea47cced623e3/download/image.png)
+https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/69102221e98ea47cced623e3/download/image.png
 
 Cada empresa tiene un registro único.
 
