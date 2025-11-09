@@ -94,3 +94,76 @@ El dataset incluye datos económicos como ingresos operacionales, utilidad neta,
 
 ## ¿Estos datos me sirven para lograr el objetivo?
 **Sí, los datos del dataset “10.000 Empresas más Grandes del País” permiten identificar relaciones entre tamaño, rentabilidad y ubicación de las empresas, por lo que son adecuados para el análisis propuesto.**
+
+---
+---
+---
+
+## Análisis del Dataset “10.000 Empresas más Grandes del País”
+
+### Duplicados
+
+0 registros duplicados
+
+![Duplicados](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/69102221e98ea47cced623e3/download/image.png)
+
+Cada empresa tiene un registro único.
+
+---
+
+### Valores nulos
+
+Se encuentran 2 valores nulos en la columna `RAZÓN SOCIAL`.
+
+![Valores nulos](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/691022879f0d20482256370b/download/image.png)
+
+Esos dos casos deben revisarse, ya que podrían corresponder a errores de digitación o registros sin razón social asignada.
+
+---
+
+### Tipos de Datos
+
+Todas las columnas están actualmente como **texto** (`object`).  
+Incluye tanto variables categóricas (como **REGIÓN**, **MACROSECTOR**, **CIUDAD**)  
+como variables numéricas representadas como texto (**INGRESOS OPERACIONALES**, **GANANCIA (PÉRDIDA)**, **TOTAL ACTIVOS**, etc.).
+
+![Tipos de datos](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/691023c057ef254664d3ea21/download/image.png)
+
+Antes de cualquier análisis numérico o cálculo, será necesario **convertir las columnas financieras a tipo numérico (`float` o `int`)**, eliminando símbolos como `$`, `,` o espacios.
+
+---
+
+### Distribuciones
+
+Aunque todavía están en formato texto, se espera que:
+
+- Las **variables financieras** (*INGRESOS OPERACIONALES*, *TOTAL ACTIVOS*, *PATRIMONIO*) muestren una **distribución fuertemente sesgada a la derecha**, con pocas empresas de muy alto valor y muchas de menor tamaño.  
+- Las **variables categóricas** como *MACROSECTOR* o *REGIÓN* concentren gran parte de los registros en pocas categorías dominantes (por ejemplo, *Comercio* o *Bogotá D.C.*).
+
+![Distribuciones](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/6910245efb729c2b4f2f7b94/download/image.png)
+
+Se recomienda aplicar una **transformación logarítmica o escalamiento** después de convertirlas a numéricas para obtener análisis más estables.
+
+---
+
+### Correlaciones
+
+Por ahora **no se pueden calcular correlaciones válidas**, ya que las columnas numéricas están en formato texto.  
+Una vez convertidas, se espera encontrar:
+
+- Alta **correlación positiva** entre *TOTAL ACTIVOS*, *TOTAL PASIVOS* y *PATRIMONIO*.  
+- Posible **relación entre INGRESOS OPERACIONALES y GANANCIA (PÉRDIDA)*.*
+
+![Correlaciones](https://trello.com/1/cards/690c2c386cde4d38d46b5880/attachments/6910257b81555a3a74144e1f/download/image.png)
+
+Esto puede ayudar a identificar **indicadores financieros clave** o **redundancias entre variables**.
+
+---
+
+### Estadísticas descriptivas generales
+
+Después de limpiar los datos numéricos, el análisis mostrará:
+
+- **Valores máximos y mínimos extremos**, dada la gran diferencia entre empresas.  
+- **Media mucho mayor que la mediana**, típica de distribuciones sesgadas.  
+- **Desviaciones estándar altas**, reflejando la heterogeneidad del tamaño empresarial.
